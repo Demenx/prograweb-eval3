@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Formulario de Nombres</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Formulario de Nombres</h2>
+        <form method="POST">
+            <label>Nombre 1: <input type="text" name="nombre1" required></label><br>
+            <label>Nombre 2: <input type="text" name="nombre2" required></label><br>
+            <label>Nombre 3: <input type="text" name="nombre3" required></label><br>
+            <button type="submit">Enviar</button>
+        </form>
+
+        {% if resultado %}
+            <p>El nombre con mayor cantidad de caracteres es: {{ resultado.nombre }}</p>
+            <p>El nombre tiene: {{ resultado.longitud }} caracteres</p>
+        {% endif %}
+    </div>
+</body>
+</html>
